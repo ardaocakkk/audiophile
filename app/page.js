@@ -8,10 +8,16 @@ import ImageHeaderMobile from "@/public/home/mobile/image-header.jpg";
 import ImageHeaderTablet from "@/public/home/tablet/image-header.jpg";
 import ImageHeaderDesktop from "@/public/home/desktop/desktop-img.png"
 import Image from "next/image";
+import SeeProductButton from "@/app/ui/buttons/SeeProductButton";
+import xx99MarkIIMobile from "@/public/shared/mobile/image-removebg-preview(41).png"
+import imageThumbnailSpeakers from "@/public/shared/desktop/image-category-thumbnail-speakers.png"
+import HomeItemCategoryCard from "@/app/ui/cards/HomeItemCategoryCard";
+import imageThumbnailEarphones from "@/public/shared/desktop/image-category-thumbnail-earphones.png";
 
 export default function Home() {
     const [deviceSize, setDeviceSize] = useState('');
     const [imageHeader, setImageHeader] = useState();
+    const [headPhoneImage, setHeadPhoneImage] = useState();
 
 
     useEffect(() => {
@@ -29,6 +35,7 @@ export default function Home() {
             else {
                 setDeviceSize('mobile');
                 setImageHeader(ImageHeaderMobile);
+                setHeadPhoneImage(xx99MarkIIMobile)
             }
         }
 
@@ -54,12 +61,10 @@ export default function Home() {
                    <div className={'w-[328px] h-[75px] md:[396px] md:h-[75px] text-center mt-[24px] lg:text-start'}>
                        <p className={''}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                    </div>
-                   <div className="w-[160px] h-[48px] bg-darkOrange mt-[28px] flex items-center justify-center">
-                       <p className="subTitle text-customGray">SEE PRODUCT</p>
-                   </div>
+                   <SeeProductButton/>
                </div>
            </div>
-           <div className={'bg-black w-full h-[729px] flex justify-between md:hidden lg:flex'}>
+           <div className={'bg-black w-full h-[729px] flex justify-between hidden lg:flex'}>
                <div className={'text-white mt-[225px] ml-[165px]'}>
                    <p className={'overline text-customGray'}>NEW PRODUCT</p>
                    <div className={'w-[328px] h-80px md:w-[396px] h-[116px] text-center mt-[16px]'}>
@@ -71,12 +76,22 @@ export default function Home() {
                    <div className={'w-[328px] h-[75px] md:[396px] md:h-[75px] text-center mt-[24px] lg:text-start'}>
                        <p className={''}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                    </div>
-                   <div className="w-[160px] h-[48px] bg-darkOrange mt-[28px] flex items-center justify-center">
-                       <p className="subTitle text-customGray">SEE PRODUCT</p>
-                   </div>
+                   <SeeProductButton/>
                </div>
-               <Image src={ImageHeaderDesktop} alt={"ASD"} className={'right-0 justify-end '} />
+               <Image src={ImageHeaderDesktop} alt={"ASD"} className={'hidden lg:block right-0 justify-end '} />
            </div>
+
+           <div className={'w-[327px] h-[217px mx-auto mt-[92px]'}>
+               <HomeItemCategoryCard img={xx99MarkIIMobile} item={"HEADPHONES"} />
+               <div className={'mt-[100px]'}>
+               <HomeItemCategoryCard img={imageThumbnailSpeakers} item={"SPEAKERS"}  />
+               </div>
+               <div className={'mt-[100px]'}>
+               <HomeItemCategoryCard img={imageThumbnailEarphones} item={"HEADPHONES"} />
+               </div>
+           </div>
+
+
        </main>
    </div>
   );
