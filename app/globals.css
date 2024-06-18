@@ -51,7 +51,6 @@ h6 {
     font-size: 14px;
     line-height: 19px;
     letter-spacing: 10px;
-    @apply text-darkOrange;
     text-decoration: none;
 }
 
@@ -60,7 +59,6 @@ h6 {
     font-size: 13px;
     line-height: 25px;
     letter-spacing: 1px;
-    @apply text-darkOrange;
 }
 
 body {
@@ -69,3 +67,4 @@ body {
     line-height: 25px;
     letter-spacing: 0;
 }
+
