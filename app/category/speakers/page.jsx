@@ -11,9 +11,9 @@ export default function Page() {
             <CategoryItemCard isNew={true} img={Speaker1} title={"ZX9 SPEAKER"} description={"Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."}/>
         </div>
         <div className={'mt-[120px]'}>
-            <CategoryItemCard isNew={false} img={Speaker2} title={"ZX7 SPEAKER"} description={"Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."}/>
+            <CategoryItemCard isReversed={true} isNew={false} img={Speaker2} title={"ZX7 SPEAKER"} description={"Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."}/>
         </div>
-        <div className={'  mt-[155px] '}>
+        <div className={'  mt-[155px]  h-[683px] md:h-[217px] lg:h-[284px]'}>
             <AllCategories/>
         </div>
     </>

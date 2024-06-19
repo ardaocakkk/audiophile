@@ -1,10 +1,12 @@
 import Image from "next/image";
 import RightArrow from "@/public/shared/desktop/icon-arrow-right.svg";
 import {Icon} from "@mui/material";
+import Link from "next/link";
 
 export default function HomeItemCategoryCard(props) {
     return (
         <>
+
             <div className={'h-[165px] md:w-[223px] md:h-[217px] lg:w-[350px] bg-customGray w-full rounded-xl relative'}>
                 <div className="absolute inset-0 flex  justify-center">
                     <Image

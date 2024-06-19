@@ -12,6 +12,7 @@ import BestGearMobile from "@/public/shared/mobile/image-best-gear.jpg";
 import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
 import {useEffect, useState} from "react";
+import Link from "next/link";
 
 export default function Footer(props) {
 
@@ -52,10 +53,10 @@ export default function Footer(props) {
           <div className={'pt-[52px] flex flex-col  lg:flex-row lg:justify-between justify-center md:justify-start mx-auto'}>
           <Image src={logo} alt={"logo"} className={'mx-auto lg:mx-0'}/>
           <div className={'flex flex-col md:flex-row    justify-center items-center md:justify-start md:m-0 text-white mt-[48px]'}>
-              <h6 className={'md:mt-4 md:mr-[34px] hover:text-darkOrange'}>HOME</h6>
-              <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>HEADPHONES</h6>
-              <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>SPEAKERS</h6>
-              <h6 className={'mt-4 hover:text-darkOrange'}>EARPHONES</h6>
+              <Link href={'/'} >  <h6 className={'md:mt-4 md:mr-[34px] hover:text-darkOrange'}>HOME</h6> </Link>
+             <Link href={'/category/headphones'} > <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>HEADPHONES</h6> </Link>
+             <Link href={'/category/speakers'} > <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>SPEAKERS</h6> </Link>
+             <Link href={'/category/earphones'}> <h6 className={'mt-4 hover:text-darkOrange'}>EARPHONES</h6> </Link>
           </div>
           </div>
           <div className={'mt-[48px] mx-[24px] md:w-[689px] md:h-[75px] md:mx-0'}>
