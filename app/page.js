@@ -1,7 +1,7 @@
 "use client";
 
 
-import Header from "@/app/ui/Layout/Header";
+import Header from "@/app/ui/Layout/Header/Header";
 import {useEffect, useState} from "react";
 
 import ImageHeaderMobile from "@/public/home/mobile/image-header.jpg";
@@ -28,7 +28,7 @@ import yx1EarphonesDesktop from "@/public/product-yx1-earphones/desktop/image-ga
 import BestGearMobile from "@/public/shared/mobile/image-best-gear.jpg";
 import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
-import Footer from "@/app/ui/Layout/Footer";
+import Footer from "@/app/ui/Layout/Footer/Footer";
 import AllCategories from "@/app/ui/cards/Category/AllCategories";
 
 export default function Home() {

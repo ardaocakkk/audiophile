@@ -13,6 +13,7 @@ import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import AudiophileIcon from "@/app/ui/icons/AuidophileIcon";
 
 export default function Footer(props) {
 
@@ -51,7 +52,10 @@ export default function Footer(props) {
         </div>
       <div className={'w-full h-[654px] mt-[120px] md:w-full md:h-[400px] bg-black md:px-[39px] lg:w-full lg:h-[365px] lg:px-[165px] '}>
           <div className={'pt-[52px] flex flex-col  lg:flex-row lg:justify-between justify-center md:justify-start mx-auto'}>
-          <Image src={logo} alt={"logo"} className={'mx-auto lg:mx-0'}/>
+          {/*<Image src={logo} alt={"logo"} className={'mx-auto lg:mx-0'}/>*/}
+              <div className={'mx-auto md:mx-0'}>
+                  <Link href={'/'}> <AudiophileIcon/></Link>
+              </div>
           <div className={'flex flex-col md:flex-row    justify-center items-center md:justify-start md:m-0 text-white mt-[48px]'}>
               <Link href={'/'} >  <h6 className={'md:mt-4 md:mr-[34px] hover:text-darkOrange'}>HOME</h6> </Link>
              <Link href={'/category/headphones'} > <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>HEADPHONES</h6> </Link>
@@ -71,7 +75,7 @@ export default function Footer(props) {
                   Copyright 2024. All Rights Reserved
               </p>
           </div>
-          <div className={'mt-[48px] flex justify-center items-center mx-auto md:mx-0 text-white hover:fill-darkOrange'}>
+          <div className={'mt-[48px] flex justify-center items-center mx-auto md:mx-0 text-white '}>
               <a className={'mr-4'}><FacebookIcon /></a>
               <a className={'mr-4'}><TwitterIcon/></a>
               <a><InstagramIcon/></a>

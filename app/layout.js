@@ -2,8 +2,8 @@
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
-import Header from "@/app/ui/Layout/Header";
-import Footer from "@/app/ui/Layout/Footer";
+import Header from "@/app/ui/Layout/Header/Header";
+import Footer from "@/app/ui/Layout/Footer/Footer";
 
 
 const manrope = Manrope({ subsets: ["latin"] });
