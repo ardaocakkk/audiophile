@@ -68,3 +68,7 @@ body {
     letter-spacing: 0;
 }
 
+svg:hover path{
+    fill : #D87D4A;
+}
+

@@ -28,6 +28,7 @@ import yx1EarphonesDesktop from "@/public/product-yx1-earphones/desktop/image-ga
 import BestGearMobile from "@/public/shared/mobile/image-best-gear.jpg";
 import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
+import Footer from "@/app/ui/Layout/Footer";
 
 export default function Home() {
     const [deviceSize, setDeviceSize] = useState('');
@@ -187,7 +188,7 @@ export default function Home() {
                </div>
            </div>
 
-
+           <Footer/>
 
 
        </main>
