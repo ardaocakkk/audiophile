@@ -12,7 +12,8 @@ module.exports = {
         customBlack : "#101010",
         customGray : "#F1F1F1",
         customWhite : "#FAFAFA",
-        lightOrange : "#FBAF85"
+        lightOrange : "#FBAF85",
+        lightGray : "#4C4C4C",
       }
     },
   },

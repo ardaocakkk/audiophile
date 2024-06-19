@@ -1,6 +1,6 @@
-export default function SeeProductButton() {
+export default function SeeProductButton(props) {
     return <>
-        <div className="w-[160px] h-[48px] bg-darkOrange mt-[28px] flex items-center justify-center">
+        <div className={`w-[160px] h-[48px] bg-${props.color} transition duration-500 ${props.color === "black" ? "hover:bg-lightGray" : "hover:bg-lightOrange"} mt-[28px] flex items-center justify-center`}>
             <p className="subTitle text-customGray">SEE PRODUCT</p>
         </div>
     </>
