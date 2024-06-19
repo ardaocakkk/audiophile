@@ -16,7 +16,7 @@ export default function Page() {
             <div className={'mt-[120px]'}>
                 <CategoryItemCard isNew={false} img={XX99MARKIIMobile2} title={"XX59 HEADPHONES"} description={"Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move."}/>
             </div>
-            <div className={'w-[327px] h-[583px] mx-auto mt-[155px]'}>
+            <div className={'mt-[155px] '}>
                 <AllCategories/>
             </div>
         </>

@@ -15,7 +15,7 @@ export default function Page() {
                 <CategoryItemCard isNew={true} img={Earphone1} title={"YX1 WIRELESS\n" +
                     "EARPHONES"} description={"Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature."}/>
             </div>
-            <div className={'w-[327px] h-[583px] mx-auto mt-[155px]'}>
+            <div className={'mt-[155px] '}>
                 <AllCategories/>
             </div>
 
