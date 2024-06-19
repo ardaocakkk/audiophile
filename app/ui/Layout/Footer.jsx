@@ -22,6 +22,7 @@ export default function Footer() {
           </div>
           <div className={'mt-[48px] mx-[24px] md:w-[689px] md:h-[75px] md:mx-0'}>
               <p className={'text-white text-opacity-30 text-center md:text-start'}>
+                  {/* eslint-disable-next-line react/no-unescaped-entities */}
                   Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
               </p>
           </div>
