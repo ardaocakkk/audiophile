@@ -1,3 +1,4 @@
+"use client";
 import logo from "@/public/shared/desktop/logo.svg";
 import facebook from "@/public/shared/desktop/icon-facebook.svg";
 import twitter from "@/public/shared/desktop/icon-twitter.svg";
@@ -7,12 +8,49 @@ import InstagramIcon from "@/app/ui/icons/InstagramIcon";
 import TwitterIcon from "@/app/ui/icons/TwitterIcon";
 import Image from "next/image";
 
-export default function Footer() {
+import BestGearMobile from "@/public/shared/mobile/image-best-gear.jpg";
+import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
+import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
+import {useEffect, useState} from "react";
+
+export default function Footer(props) {
+
+    const [bestGear, setBestGear] = useState();
+    useEffect(() => {
+        function handleResize() {
+            const width = window.innerWidth;
+            if(width >= 1024) {
+                setBestGear(BestGearDesktop);
+
+            }
+            else if(width >= 768 && width < 1024) {
+                setBestGear(BestGearTablet);
+            }
+            else {
+                setBestGear(BestGearMobile);
+
+            }
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
   return (
     <footer className={'mt-[120px]'}>
-      <div className={'w-full h-[654px] md:w-full md:h-[400px] bg-black md:px-[39px] lg:w-full lg:h-[365px] lg:px-[165px] '}>
+        <div className={'w-[327px] h-[698px] mt-[300px] mx-auto md:m-auto md:w-[689px] md:h-[633px] md:mt-[48px] lg:w-[1110px] lg:h-[588px] lg:flex lg:flex-row-reverse '}>
+            <Image src={bestGear} alt={"best gear"} className={'md:w-[689px] md:h-[300px] rounded-lg lg:w-[540px] lg:h-full '}/>
+            <div className={'mt-[40px] w-[327px] md:mx-auto md:w-[573px] md:h-[270px] lg:w-[445px] lg:h-[295px] lg:my-auto lg:ml-4 '}>
+                <div className={'w-full h-[76px] md:h-[88px]'}>
+                    <h3 className={'text-center lg:text-start'}>Bringing you the <span className={'text-darkOrange'}>best</span> audio gear</h3>
+                </div>
+                <div className={'w-full h-[250px] mt-8 md:h-[150px] lg:w-[445px] lg:h-[175px]' }>
+                    <p className={'text-center text-black text-opacity-30 lg:text-start'}>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+                </div>
+            </div>
+        </div>
+      <div className={'w-full h-[654px] mt-[120px] md:w-full md:h-[400px] bg-black md:px-[39px] lg:w-full lg:h-[365px] lg:px-[165px] '}>
           <div className={'pt-[52px] flex flex-col  lg:flex-row lg:justify-between justify-center md:justify-start mx-auto'}>
-          <Image src={logo} alt={"logo"} className={''}/>
+          <Image src={logo} alt={"logo"} className={'mx-auto lg:mx-0'}/>
           <div className={'flex flex-col md:flex-row    justify-center items-center md:justify-start md:m-0 text-white mt-[48px]'}>
               <h6 className={'md:mt-4 md:mr-[34px] hover:text-darkOrange'}>HOME</h6>
               <h6 className={'mt-4 md:mr-[34px] hover:text-darkOrange'}>HEADPHONES</h6>

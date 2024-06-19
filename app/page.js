@@ -29,6 +29,7 @@ import BestGearMobile from "@/public/shared/mobile/image-best-gear.jpg";
 import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
 import Footer from "@/app/ui/Layout/Footer";
+import AllCategories from "@/app/ui/cards/Category/AllCategories";
 
 export default function Home() {
     const [deviceSize, setDeviceSize] = useState('');
@@ -83,7 +84,6 @@ export default function Home() {
     }, []);
   return (
    <div>
-       <Header />
        <main>
            <div className={'w-full h-fit relative lg:bg-black lg:hidden'}>
                <Image src={imageHeader} alt={"headphones"} className={"lg:w-1/4 relative lg:left-2/4 "}/>
@@ -118,15 +118,7 @@ export default function Home() {
                <Image src={ImageHeaderDesktop} alt={"ASD"} className={'hidden lg:block right-0 justify-end '} />
            </div>
 
-           <div className={'w-[327px] grid grid-cols-1 mx-auto h-[217px] mt-[92px] md:w-[689px] md:px-[40px] md:mt-[96px]  md:grid md:grid-cols-3 md:m-0 lg:gap-28 lg:w-[1110px] lg:justify-items-center lg:mx-auto'}>
-               <HomeItemCategoryCard img={xx99MarkIIMobile} item={"HEADPHONES"} />
-               <div className={'mt-[100px] md:m-0 md:ml-7 '}>
-               <HomeItemCategoryCard img={imageThumbnailSpeakers} item={"SPEAKERS"}  />
-               </div>
-               <div className={'mt-[100px] md:m-0 md:ml-14 md:mr-6'}>
-               <HomeItemCategoryCard img={imageThumbnailEarphones} item={"EARPHONES"} />
-               </div>
-           </div>
+           <AllCategories  />
 
            <div className="mx-auto mt-[580px] md:mt-[148px] rounded-xl w-[327px] h-[600px] md:w-[689px] md:h-[720px] lg:w-[1110px] lg:h-[560px] bg-darkOrange relative">
                <Image
@@ -176,19 +168,7 @@ export default function Home() {
                    </div>
                </div>
            </div>
-           <div className={'w-[327px] h-[698px] mt-[300px] mx-auto md:m-auto md:w-[689px] md:h-[633px] md:mt-[48px] lg:w-[1110px] lg:h-[588px] lg:flex lg:flex-row-reverse '}>
-               <Image src={bestGear} alt={"best gear"} className={'md:w-[689px] md:h-[300px] rounded-lg lg:w-[540px] lg:h-full '}/>
-               <div className={'mt-[40px] w-[327px] md:mx-auto md:w-[573px] md:h-[270px] lg:w-[445px] lg:h-[295px] lg:my-auto lg:ml-4 '}>
-                   <div className={'w-full h-[76px] md:h-[88px]'}>
-                       <h3 className={'text-center lg:text-start'}>Bringing you the <span className={'text-darkOrange'}>best</span> audio gear</h3>
-                   </div>
-                   <div className={'w-full h-[250px] mt-8 md:h-[150px] lg:w-[445px] lg:h-[175px]' }>
-                       <p className={'text-center text-black text-opacity-30 lg:text-start'}>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
-                   </div>
-               </div>
-           </div>
        </main>
-       <Footer/>
 
    </div>
 
