@@ -10,8 +10,8 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className={'mt-[120px]'}>
-      <div className={'w-[375px] h-[654px] md:w-[768px] md:h-[400px] bg-black md:px-[39px] lg:w-full lg:h-[365px] lg:px-[165px] '}>
-          <div className={'pt-[52px] flex flex-col lg:flex-row lg:justify-between justify-center md:justify-start mx-auto'}>
+      <div className={'w-full h-[654px] md:w-full md:h-[400px] bg-black md:px-[39px] lg:w-full lg:h-[365px] lg:px-[165px] '}>
+          <div className={'pt-[52px] flex flex-col  lg:flex-row lg:justify-between justify-center md:justify-start mx-auto'}>
           <Image src={logo} alt={"logo"} className={''}/>
           <div className={'flex flex-col md:flex-row    justify-center items-center md:justify-start md:m-0 text-white mt-[48px]'}>
               <h6 className={'md:mt-4 md:mr-[34px] hover:text-darkOrange'}>HOME</h6>
