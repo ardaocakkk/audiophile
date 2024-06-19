@@ -5,7 +5,7 @@ import {Icon} from "@mui/material";
 export default function HomeItemCategoryCard(props) {
     return (
         <>
-            <div className={'h-[165px] bg-customGray w-full rounded-xl relative'}>
+            <div className={'h-[165px] md:w-[223px] md:h-[217px] lg:w-[350px] bg-customGray w-full rounded-xl relative'}>
                 <div className="absolute inset-0 flex  justify-center">
                     <Image
                         src={props.img}
@@ -18,7 +18,7 @@ export default function HomeItemCategoryCard(props) {
                     <div className="flex flex-col justify-center items-center text-center">
                         <h5 className="text-black">{props.item}</h5>
                         <div className="flex items-center">
-                            <h6 className="text-black">SHOP</h6>
+                            <h6 className="text-black hover:text-darkOrange">SHOP</h6>
                             <span className="ml-2"><Image src={RightArrow} alt="asd" /></span>
                         </div>
                     </div>

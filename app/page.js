@@ -9,7 +9,7 @@ import ImageHeaderTablet from "@/public/home/tablet/image-header.jpg";
 import ImageHeaderDesktop from "@/public/home/desktop/desktop-img.png"
 import Image from "next/image";
 import SeeProductButton from "@/app/ui/buttons/SeeProductButton";
-import xx99MarkIIMobile from "@/public/shared/mobile/image-removebg-preview(41).png"
+import xx99MarkIIMobile from "@/public/shared/desktop/image-category-thumbnail-headphones.png"
 import imageThumbnailSpeakers from "@/public/shared/desktop/image-category-thumbnail-speakers.png"
 import HomeItemCategoryCard from "@/app/ui/cards/HomeItemCategoryCard";
 import imageThumbnailEarphones from "@/public/shared/desktop/image-category-thumbnail-earphones.png";
@@ -81,13 +81,13 @@ export default function Home() {
                <Image src={ImageHeaderDesktop} alt={"ASD"} className={'hidden lg:block right-0 justify-end '} />
            </div>
 
-           <div className={'w-[327px] h-[217px mx-auto mt-[92px]'}>
+           <div className={'w-[327px] grid grid-cols-1 mx-auto h-[217px] mt-[92px] md:w-[689px] md:px-[40px] md:mt-[96px]  md:grid md:grid-cols-3 md:m-0 lg:w-full lg:pl-[165px] '}>
                <HomeItemCategoryCard img={xx99MarkIIMobile} item={"HEADPHONES"} />
-               <div className={'mt-[100px]'}>
+               <div className={'mt-[100px] md:m-0 md:ml-7 '}>
                <HomeItemCategoryCard img={imageThumbnailSpeakers} item={"SPEAKERS"}  />
                </div>
-               <div className={'mt-[100px]'}>
-               <HomeItemCategoryCard img={imageThumbnailEarphones} item={"HEADPHONES"} />
+               <div className={'mt-[100px] md:m-0 md:ml-14'}>
+               <HomeItemCategoryCard img={imageThumbnailEarphones} item={"EARPHONES"} />
                </div>
            </div>
 
