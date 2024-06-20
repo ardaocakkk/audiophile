@@ -27,7 +27,7 @@ export default function ProductLayout({ children }) {
         <div>
             <div>{children}</div>
 
-            <div className="h-[683px] mt-[120px]">
+            <div className="h-[683px] mt-[120px] md:w-[689px] md:h-[217px] mx-auto">
                 <AllCategories />
             </div>
         </div>

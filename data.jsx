@@ -6,7 +6,7 @@ var data = [
     "image": {
       "mobile": "/Product/Earphones/mobile/earphone-mobile.png",
       "tablet": "/Product/Earphones/tablet/earphone-tablet.png",
-      "desktop": "/Product/Earphones/yaml/earphone-yaml.png"
+      "desktop": "/Product/Earphones/desktop/earphone-desktop.png"
     },
     "category": "earphones",
     "categoryImage": {
@@ -97,7 +97,7 @@ var data = [
     "image": {
       "mobile": "/Product/Headphones/mobile/xx59/xx59-mobile.png",
       "tablet": "/Product/Headphones/tablet/xx59/xx59-tablet.png",
-      "desktop": "/Product/Headphones/yaml/xx59/xx59-yaml.png"
+      "desktop": "/Product/Headphones/desktop/xx59/xx59-desktop.png"
     },
     "category": "headphones",
     "categoryImage": {
@@ -521,7 +521,7 @@ var data = [
         "category": "headphones",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-1.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-1.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-1.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-1.png"
         }
       },

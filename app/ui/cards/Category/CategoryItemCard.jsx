@@ -13,8 +13,17 @@ export default function CategoryItemCard(props) {
 
                 <div className={'w-[327px] h-[724px] mx-auto mt-[64px] md:w-[689px] md:h-[706px] lg:w-[1110px] lg:h-[560px]'}>
                     <div className={`flex flex-col  lg:flex-row ${props.isReversed === true ? "lg:flex-row-reverse" : ""} `}>
-                    <div className={'w-[327px] h-[352px] bg-customGray rounded-lg flex justify-center items-center w-full lg:w-[540px] lg:h-[560px] '}>
-                        <Image src={props.img} alt={"xx"} className={''}/>
+                    <div className={'w-[327px] h-[327px] bg-customGray rounded-lg flex justify-center items-center w-full lg:w-[540px] lg:h-[560px] '}>
+                        <div className={'relative w-[242px] h-[244px] md:w-[345px] md:h-[312px] mx-auto '}>
+                            <Image
+                                src={props.img}
+                                alt="Centered image"
+                                layout="fill"
+                                objectFit="contain"
+                                className="justify-center items-center rounded-lg"
+                            />
+
+                        </div>
                     </div>
                     <div className="mt-[32px] flex flex-col items-center justify-center ">
                         {props.isNew === true && <h6 className="overline text-darkOrange">NEW PRODUCT</h6>}
@@ -26,7 +35,7 @@ export default function CategoryItemCard(props) {
                             <h6 className={'text-black text-opacity-50 text-center'}>{props.description}</h6>
                         </div>
                         <div className={'mt-[24px]'}>
-                            <SeeProductButton color={'darkOrange'}  />
+                            <SeeProductButton color={'darkOrange'} href={props.href}  />
                         </div>
                     </div>
                     </div>

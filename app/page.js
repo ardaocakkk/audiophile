@@ -30,6 +30,7 @@ import BestGearTablet from "@/public/shared/tablet/image-best-gear.jpg";
 import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
 import Footer from "@/app/ui/Layout/Footer/Footer";
 import AllCategories from "@/app/ui/cards/Category/AllCategories";
+import Link from "next/link";
 
 export default function Home() {
     const [deviceSize, setDeviceSize] = useState('');
@@ -98,7 +99,7 @@ export default function Home() {
                    <div className={'w-[328px] h-[75px] md:[396px] md:h-[75px] text-center mt-[24px] lg:text-start'}>
                        <p className={'text-white text-opacity-60'}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                    </div>
-                   <SeeProductButton color="darkOrange" />
+                   <SeeProductButton color="darkOrange" href={'/products/headphones/mark2-mark-two-headphones'} />
                </div>
            </div>
            <div className={'bg-black w-full h-[729px] flex justify-between hidden lg:flex'}>
@@ -113,7 +114,7 @@ export default function Home() {
                    <div className={'w-[328px] h-[75px] md:[396px] md:h-[75px] text-center mt-[24px] lg:text-start'}>
                        <p className={'text-white text-opacity-60'}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                    </div>
-                   <SeeProductButton color={'darkOrange'} />
+                   <SeeProductButton color={'darkOrange'} href={'/products/headphones/mark2-mark-two-headphones'} />
                </div>
                <Image src={ImageHeaderDesktop} alt={"ASD"} className={'hidden lg:block right-0 justify-end '} />
            </div>
@@ -138,7 +139,7 @@ export default function Home() {
                        </p>
                    </div>
                    <div className="md:pt-12 lg:pt-8">
-                       <SeeProductButton  color="black"   />
+                       <SeeProductButton  color="black" href={'/products/speakers/zx9-speaker'}   />
                    </div>
                </div>
            </div>
@@ -147,9 +148,12 @@ export default function Home() {
                <Image src={zx7Speaker} alt="zx7 speaker" className="rounded-lg w-full lg:h-[320px]  object-cover" />
                <div className="absolute inset-0 flex flex-col items-start justify-center ml-6 md:ml-[62px]">
                    <h1 className="text-black text-3xl font-bold">ZX7 SPEAKER</h1>
+
+                   <Link href={'/products/speakers/zx7-speaker'}>
                    <div className={'w-[160px] h-[48px] border border-black flex items-center justify-center mt-8 '}>
                        <h6 className={'text-center '}>SEE PRODUCT</h6>
                    </div>
+                   </Link>
                </div>
            </div>
 
@@ -159,9 +163,11 @@ export default function Home() {
                        <div className={"mt-7 w-[327px] h-[200px] md:mt-0 md:ml-3 lg:ml-12 md:w-[339px] md:h-[320px] lg:w-[540px] lg:h-[320px] bg-customGray rounded-lg flex  "}>
                        <div className={'ml-6 flex flex-col   my-auto md:w-[339px] md:h-[320px]  md:justify-center md:ml-[44px] lg:w-[540px] lg:h-[320px] '}>
                            <h4>YX1 EARPHONES</h4>
+                           <Link href={'/products/earphones/yx1-earphones'}>
                            <div className={'w-[160px] h-[48px] border border-black flex items-center justify-center mt-8 '}>
                                <h6 className={'text-center '}>SEE PRODUCT</h6>
                            </div>
+                           </Link>
 
                        </div>
 
