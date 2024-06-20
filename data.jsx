@@ -42,19 +42,19 @@ var data = [
     ],
     "gallery": {
       "first": {
-        "mobile": "/Product/Earphones/mobile/Bitmap.png",
-        "tablet": "/Product/Earphones/tablet/Bitmap.png",
-        "desktop": "/Product/Earphones/yaml/Bitmap.png"
-      },
-      "second": {
         "mobile": "/Product/Earphones/mobile/Bitmap-1.png",
         "tablet": "/Product/Earphones/tablet/Bitmap-1.png",
         "desktop": "/Product/Earphones/yaml/Bitmap-1.png"
       },
-      "third": {
+      "second": {
         "mobile": "/Product/Earphones/mobile/Bitmap-2.png",
         "tablet": "/Product/Earphones/tablet/Bitmap-2.png",
         "desktop": "/Product/Earphones/yaml/Bitmap-2.png"
+      },
+      "third": {
+        "mobile": "/Product/Earphones/mobile/Bitmap.png",
+        "tablet": "/Product/Earphones/tablet/Bitmap.png",
+        "desktop": "/Product/Earphones/yaml/Bitmap.png"
       }
     },
     "others": [
