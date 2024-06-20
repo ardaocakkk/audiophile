@@ -5,9 +5,9 @@ import AllCategories from "@/app/ui/cards/Category/AllCategories";
 import {useEffect, useState} from "react";
 import CategoryItemCard from "@/app/ui/cards/Category/CategoryItemCard";
 import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
+import useDeviceType from "@/app/ui/hooks/DeviceHook";
 
 export default function Page() {
-    const [device, setDevice] = useState('');
     const speakers = []
     data.map((item) => {
         if(item.category === "speakers") {
@@ -15,27 +15,7 @@ export default function Page() {
         }
     })
     speakers.reverse();
-    useEffect(() => {
-        function handleResize() {
-            const width = window.innerWidth;
-            if(width >= 1024) {
-                setDevice('desktop')
-            }
-            else if(width <1024 && width >= 768) {
-                setDevice('tablet')
-            }
-            else {
-                setDevice('mobile')
-            }
-        }
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-
-
-
-    }, []);
+    const device = useDeviceType();
 
     const getImage = (product) => {
         if (device === 'desktop') {

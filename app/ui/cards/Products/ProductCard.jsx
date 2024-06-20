@@ -4,24 +4,10 @@ import Image from "next/image";
 import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
 import {useEffect, useState} from "react";
 import AddToCartButton from "@/app/ui/buttons/AddToCartButton";
+import useDeviceType from "@/app/ui/hooks/DeviceHook";
 
 export default function ProductCard(props) {
-    const [device, setDevice] = useState('');
-    useEffect(() => {
-        function handleResize() {
-            const width = window.innerWidth;
-            if (width >= 1024) {
-                setDevice('desktop')
-            } else if (width < 1024 && width >= 768) {
-                setDevice('tablet')
-            } else {
-                setDevice('mobile')
-            }
-        }
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    const device = useDeviceType();
 
     return (
         <>

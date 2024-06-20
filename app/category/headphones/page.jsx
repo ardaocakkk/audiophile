@@ -8,11 +8,11 @@ import {useEffect, useState} from "react";
 
 
 import data from "@/data";
+import useDeviceType from "@/app/ui/hooks/DeviceHook";
 
 
 
 export default function Page() {
-    const [device, setDevice] = useState('');
     const headphones = []
     data.map((item) => {
         if(item.category === "headphones") {
@@ -20,27 +20,7 @@ export default function Page() {
         }
     })
     headphones.reverse();
-    useEffect(() => {
-        function handleResize() {
-            const width = window.innerWidth;
-            if(width >= 1024) {
-                setDevice('desktop')
-            }
-            else if(width <1024 && width >= 768) {
-                setDevice('tablet')
-            }
-            else {
-                setDevice('mobile')
-            }
-        }
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-
-
-
-    }, []);
+    const device = useDeviceType();
 
     const getImage = (product) => {
         if (device === 'desktop') {
