@@ -3,6 +3,7 @@
 import Image from "next/image";
 import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
 import {useEffect, useState} from "react";
+import AddToCartButton from "@/app/ui/buttons/AddToCartButton";
 
 export default function ProductCard(props) {
     const [device, setDevice] = useState('');
@@ -49,15 +50,7 @@ export default function ProductCard(props) {
                     <div className={'mt-6'}>
                         <h5>$ {props.product.price}</h5>
                     </div>
-                    <div className={'flex  mx-auto items-center justify-between mt-[31px] md:justify-start '}>
-                        <div className={'w-[120px] h-[48px] bg-customGray flex justify-between  items-center'}>
-                            <p className={'px-2'}>-</p>
-                            <p>quantity</p>
-                            <p className={'px-2'}>+</p>
-
-                        </div>
-                        <button className={'w-[160px] h-[48px] bg-darkOrange text-white md:ml-2  '}>ADD TO CART</button>
-                    </div>
+                    <AddToCartButton/>
                 </div>
                 </div>
 

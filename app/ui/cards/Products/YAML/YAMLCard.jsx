@@ -39,11 +39,11 @@ export default function YAMLCard(props) {
     return (
         <>
 
-            <div className={'flex flex-col mt-[120px] w-[327px] h-[983px] md:w-[691px] md:h-[563px] lg:w-[1110px] md:h-[571px]   items-center m-auto'}>
+            <div className={'flex flex-col mt-[120px] w-[327px] h-[983px] md:w-[691px] md:h-[563px] lg:w-[1110px] lg:h-[571px]  items-center m-auto'}>
                 <div className={'mx-auto items-center justify-center flex'}>
                     <h3> YOU MAY ALSO LIKE</h3>
                 </div>
-                <div className={'grid  grid-cols-1 md:grid-cols-3 md:gap-32'}>
+                <div className={'grid  grid-cols-1 md:grid-cols-3 '}>
                 {props.product?.others?.map((product) => {
                     const image = getImage(product);
                     console.log(image);

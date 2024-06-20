@@ -21,7 +21,7 @@ export default function Page({ params }) {
                 setDevice('desktop');
                 setImg(product.image.desktop);
                 setGalleryFirst(product?.gallery?.first?.desktop);
-                setGallerySecond(product.gallery.second.desktop);
+                setGallerySecond(product?.gallery?.second?.desktop);
                 setGalleryThird(product.gallery.third.desktop);
             } else if (width < 1024 && width >= 768) {
                 setDevice('tablet');
@@ -56,10 +56,10 @@ export default function Page({ params }) {
             gallerySecond={gallerySecond}
             galleryThird={galleryThird}
         />
+            <div className={'grid grid-cols-1 '}>
 
-
-
-
+        <YAMLCard product={product} />
+            </div>
 
         </>
 

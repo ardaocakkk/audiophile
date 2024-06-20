@@ -4,6 +4,7 @@ import data from "@/data";
 import AllCategories from "@/app/ui/cards/Category/AllCategories";
 import {useEffect, useState} from "react";
 import CategoryItemCard from "@/app/ui/cards/Category/CategoryItemCard";
+import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
 
 export default function Page() {
     const [device, setDevice] = useState('');
@@ -54,5 +55,6 @@ export default function Page() {
         <div className={'  mt-[155px]  h-[683px] md:h-[217px] lg:h-[284px]'}>
             <AllCategories/>
         </div>
+
     </>
 }

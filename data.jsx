@@ -44,17 +44,17 @@ var data = [
       "first": {
         "mobile": "/Product/Earphones/mobile/Bitmap-1.png",
         "tablet": "/Product/Earphones/tablet/Bitmap-1.png",
-        "desktop": "/Product/Earphones/yaml/Bitmap-1.png"
+        "desktop": "/Product/Earphones/desktop/Bitmap-1.png"
       },
       "second": {
         "mobile": "/Product/Earphones/mobile/Bitmap-2.png",
         "tablet": "/Product/Earphones/tablet/Bitmap-2.png",
-        "desktop": "/Product/Earphones/yaml/Bitmap-2.png"
+        "desktop": "/Product/Earphones/desktop/Bitmap-2.png"
       },
       "third": {
         "mobile": "/Product/Earphones/mobile/Bitmap.png",
         "tablet": "/Product/Earphones/tablet/Bitmap.png",
-        "desktop": "/Product/Earphones/yaml/Bitmap.png"
+        "desktop": "/Product/Earphones/desktop/Bitmap.png"
       }
     },
     "others": [
@@ -65,7 +65,7 @@ var data = [
         "image": {
           "mobile": "/Product/Earphones/mobile/ymal/earphone-ymal-1.png",
           "tablet": "/Product/Earphones/tablet/ymal/earphone-ymal-1.png",
-          "desktop": "/Product/Earphones/yaml/ymal/earphone-ymal-1.png"
+          "desktop": "/Product/Earphones/desktop/ymal/earphone-ymal-1.png"
         }
       },
       {
@@ -75,7 +75,7 @@ var data = [
         "image": {
           "mobile": "/Product/Earphones/mobile/ymal/earphone-ymal-2.png",
           "tablet": "/Product/Earphones/tablet/ymal/earphone-ymal-2.png",
-          "desktop": "public/Product/Earphones/yaml/ymal/earphone-ymal-2.png"
+          "desktop": "/Product/Earphones/desktop/ymal/earphone-ymal-2.png"
         }
       },
       {
@@ -85,7 +85,7 @@ var data = [
         "image": {
           "mobile": "/Product/Earphones/mobile/ymal/earphone-ymal-3.png",
           "tablet": "/Product/Earphones/tablet/ymal/earphone-ymal-3.png",
-          "desktop": "/Product/Earphones/yaml/ymal/earphone-ymal-3.png"
+          "desktop": "/Product/Earphones/desktop/ymal/earphone-ymal-3.png"
         }
       }
     ]
@@ -96,7 +96,7 @@ var data = [
     "name": "XX59 Headphones",
     "image": {
       "mobile": "/Product/Headphones/mobile/xx59/xx59-mobile.png",
-      "tablet": "/Product/Headphones/tablet/xx59/xx59-tablet.png",
+      "tablet": "/Product/Headphones/tablet/x59/x59-tablet.png",
       "desktop": "/Product/Headphones/desktop/xx59/xx59-desktop.png"
     },
     "category": "headphones",
@@ -131,17 +131,17 @@ var data = [
       "first": {
         "mobile": "/Product/Headphones/mobile/xx59/xx59-1.png",
         "tablet": "/Product/Headphones/tablet/x59/Bitmap-1.png",
-        "desktop": "/Product/Headphones/yaml/x59/Bitmap-1.png"
+        "desktop": "/Product/Headphones/desktop/xx59/Bitmap-1.png"
       },
       "second": {
         "mobile": "/Product/Headphones/mobile/xx59/xx59-2.png",
         "tablet": "/Product/Headphones/tablet/x59/Bitmap-2.png",
-        "desktop": "/Product/Headphones/yaml/x59/Bitmap-2.png"
+        "desktop": "/Product/Headphones/desktop/xx59/Bitmap-2.png"
       },
       "third": {
         "mobile": "/Product/Headphones/mobile/xx59/xx59-3.png",
         "tablet": "/Product/Headphones/tablet/x59/Bitmap.png",
-        "desktop": "/Product/Headphones/yaml/x59/Bitmap.png"
+        "desktop": "/Product/Headphones/desktop/xx59/Bitmap.png"
       }
     },
     "others": [
@@ -151,7 +151,7 @@ var data = [
         "category": "headphones",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-1.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-1.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-1.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-1.png"
         }
       },
@@ -161,7 +161,7 @@ var data = [
         "category": "headphones",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-2.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-2.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-2.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-2.png"
         }
       },
@@ -171,7 +171,7 @@ var data = [
         "category": "speakers",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-3.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-3.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-3.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-3.png"
         }
       }
@@ -183,7 +183,7 @@ var data = [
     "name": "XX99 Mark I Headphones",
     "image": {
       "mobile": "/Product/Headphones/mobile/mark1/xx99-mark1.png",
-      "tablet": "/Product/Headphones/tablet/mark1/xx99-mark1.png",
+      "tablet": "/Product/Headphones/tablet/mark1/x99-mark1.png",
       "desktop": "/Product/Headphones/desktop/mark1/xx99-mark1.png"
     },
     "category": "headphones",
@@ -238,7 +238,7 @@ var data = [
         "category": "headphones",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-1.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-1.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-1.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-1.png"
         }
       },
@@ -258,7 +258,7 @@ var data = [
         "category": "speakers",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-3.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-3.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-3.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-3.png"
         }
       }
@@ -329,7 +329,7 @@ var data = [
         "category" : "headphones",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-1.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-1.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-1.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-1.png"
         }
       },
@@ -349,7 +349,7 @@ var data = [
         "category" : "speakers",
         "image": {
           "mobile": "/Product/Headphones/mobile/xx59/yaml/yaml-3.png",
-          "tablet": "/Product/Headphones/tablet/xx59/yaml/yaml-3.png",
+          "tablet": "/Product/Headphones/tablet/x59/yaml/yaml-3.png",
           "desktop": "/Product/Headphones/desktop/xx59/yaml/yaml-3.png"
         }
       }
