@@ -30,7 +30,7 @@ const sm = {
 const md = {
     position: 'absolute',
     top: '35%',
-    left: '50%',
+    left: '67%',
     transform: 'translate(-50%, -50%)',
     width: 377,
     height: 488,
@@ -45,9 +45,9 @@ const md = {
 const lg = {
     position: 'absolute',
     top: '35%',
-    left: '50%',
+    left: '80%',
     transform: 'translate(-50%, -50%)',
-    width: 327,
+    width: 387,
     height: 488,
     bgcolor: 'background.paper',
     borderRadius: 2,
@@ -75,17 +75,19 @@ export default function CartButton() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    useEffect(() => {
-        if(device === 'desktop') {
-            setBoxSx(lg);
+    const getBoxSx = () => {
+        switch (device) {
+            case 'desktop':
+                return lg;
+            case 'tablet':
+                return md;
+            case 'mobile':
+                return sm;
+            default:
+                return {};
         }
-        else if(device === 'tablet') {
-            setBoxSx(md);
-        }
-        else {
-            setBoxSx(sm);
-        }
-    }, []);
+    };
+
 
     return (
         <>
@@ -97,23 +99,23 @@ export default function CartButton() {
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                    <Box sx={boxSx}>
+                    <Box sx={getBoxSx()}>
                         <div className={'flex w-[270px] h-[26px] justify-between '}>
                             <h5>CART ({cart.length}) </h5>
                             <p className={'text-black text-opacity-30 '}>Remove All</p>
                         </div>
-                        <div className={'flex flex-col mt-[31px] '}>
+                        <div className={'flex flex-col mt-[31px] md:w-[313px] md:h-[240px] md:ml-[33px] '}>
                             {cart.map((item) => {
                                 return <CartItem key={item.id} item={item}/>
                             })}
                         </div>
 
-                        <div className={'w-[270px] h-[25px] flex justify-between mt-[39px]'}>
+                        <div className={'w-[270px] h-[25px] md:w-[308px] md:h-[25px] flex justify-between mt-[39px]'}>
                             <p>TOTAL</p>
                             <p>$ 1,999.00</p>
                         </div>
 
-                        <div className={'w-[271px] h-[48px] bg-darkOrange flex justify-center items-center'}>
+                        <div className={'w-[271px] h-[48px] md:w-[313px] md:h-[48px] bg-darkOrange flex justify-center items-center'}>
                             <Button className={'text-white w-full h-full'}>CHECKOUT</Button>
                         </div>
 
