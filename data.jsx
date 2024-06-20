@@ -535,7 +535,33 @@ var data = [
           "desktop": "/Product/Headphones/desktop/mark1/yaml/yaml-1.png"
         }
       }
+    ],
+  },
+  {
+    "cart" : [
+      {
+        "id": 1,
+        "name": "XX99 MK II",
+        "price": 2999,
+        "quantity": 1,
+        "image": "/cart/cart-1.png",
+      },
+      {
+        "id": 2,
+        "name": "XX 59",
+        "price": 899,
+        "quantity": 2,
+        "image": "/cart/cart-2.png",
+      },
+      {
+        "id": 3,
+        "name": "YX1 Wireless Earphones",
+        "price": 599,
+        "quantity": 1,
+        "image": "/cart/cart-3.png",
+      }
     ]
   }
+
 ]
 export default data;

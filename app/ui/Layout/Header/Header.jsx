@@ -6,6 +6,7 @@ import Link from "next/link";
 import HamburgerIconButton from "@/app/ui/buttons/HamburgerIconButton";
 import CartIcon from "@/app/ui/icons/CartIcon";
 import AudiophileIcon from "@/app/ui/icons/AuidophileIcon";
+import CartButton from "@/app/ui/buttons/CartButton";
 
 export default function Header() {
     return <>
@@ -13,7 +14,7 @@ export default function Header() {
             <div className={'flex w-full h-[90px] bg-black items-center justify-between text-white px-[24px] md:hidden'}>
                 <HamburgerIconButton/>
                 <Link href={'/'}> <AudiophileIcon/> </Link>
-                <a> <CartIcon/> </a>
+                <a> <CartButton/> </a>
             </div>
              <div className={'hidden md:block md:flex lg:hidden w-full bg-black h-[90px] justify-between text-white items-center px-[30px]'}>
                  <div className={'flex items-center '}>
@@ -21,7 +22,7 @@ export default function Header() {
                      <Link href={'/'} className={'ml-4'}> <AudiophileIcon/> </Link>
                  </div>
                  <div>
-                     <a> <CartIcon/> </a>
+                     <a> <CartButton/> </a>
                  </div>
              </div>
 
@@ -36,7 +37,7 @@ export default function Header() {
                      <Link href={'/category/earphones'}><p className={'hover:text-darkOrange'}>EARPHONES</p></Link>
                  </div>
                  <div>
-                     <a> <CartIcon/> </a>
+                     <CartButton/>
                  </div>
              </div>
          </header>
