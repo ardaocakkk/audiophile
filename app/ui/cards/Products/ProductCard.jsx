@@ -62,8 +62,8 @@ export default function ProductCard(props) {
                 </div>
 
             </div>
-            <div className={'flex flex-col md:flex-row lg:w-[1110px] lg:h-[318px] mx-auto mb-[160px] items-center '}>
-            <div className={'w-[327px] md:w-[689px] md:h-[318px]  mt-[88px] h-[510px] flex flex-col mx-auto lg:mt-[160px]'}>
+            <div className={'flex flex-col md:flex-col lg:w-[1110px] md:w-[689px] md:h-[562px]  lg:grid grid-cols-2 lg:mx-auto lg:h-[318px] mx-auto mb-[160px] items-center '}>
+            <div className={'w-[327px] md:w-[689px] md:h-[318px] lg:w-[635px] lg:h-[318px]   mt-[88px] h-[510px] flex flex-col mx-auto lg:mt-[160px]'}>
                 <div className={'w-full h-[36px] '}>
                     <h4>FEATURES</h4>
                 </div>
@@ -72,20 +72,22 @@ export default function ProductCard(props) {
                 </div>
             </div>
 
-            <div className={'w-[327px] md:w-[549px] md:h-[157px] flex flex-col md:flex-row h-[217px] mx-auto mt-[113px] lg:ml-[125px lg:flex-col lg:w-[350px] lg:h-[192px]'}>
-                <div className={'mt-[24px] w-[198px] h-[157px] md:h-[157px] md:mt-0 md:ml-16 lg:items-start'}>
+            <div className={'w-[327px] md:w-[549px] md:h-[124px] lg:w-[350px] lg:h-[225px] flex flex-col  md:flex-row h-[217px]   lg:ml-[125px] lg:flex-col  lg:mt-[36px] '}>
+                <div className={'mt-[24px] w-[198px] h-[157px] md:h-[36px]  md:w-[339px]  lg:h-[318px] md:mt-0  md:grid md:grid-cols-2 lg:flex lg:flex-col lg:items-start'}>
                 <h3 className={'mb-[32px]'}>IN THE BOX</h3>
+                    <div className={'w-[199px] h-[157px] md:w-[199px] md:h-[157px] lg:w-[350px] lg:h-[225px] '}>
                     {props.product.includes.map((item, index) => {
                       return (
                             <p key={index} className={'subTitle text-black text-opacity-30'}><span className={'text-darkOrange mr-[20px] '}> {item.quantity}x </span>{item.item}</p>
                       )
                     })}
+                    </div>
                 </div>
             </div>
             </div>
-            <div className={'mx-auto flex w-[327px] md:w-[690px] md:h-[368px] justify-center flex-col md:grid md:grid-cols-2   items-center mt-[88px]'}>
-                <div>
-                <div className="relative w-[327px] h-[174px]  md:mt-0 ">
+            <div className={'mx-auto flex w-[327px] md:w-[690px] md:h-[368px] justify-center lg:w-[1110px]  flex-col md:grid md:grid-cols-2  lg:h-[592px]  items-center mt-[88px]'}>
+                <div className={''}>
+                <div className="relative w-[327px] h-[174px] md:w-[277px] md:h-[174px]  md:mt-0 lg:w-[445px] lg:h-[280px] ">
                     <Image
                         src={props.galleryFirst}
                         alt="Centered image"
@@ -95,7 +97,7 @@ export default function ProductCard(props) {
                     />
                 </div>
 
-                <div className={'relative  w-[327px] h-[174px] mt-[20px]'}>
+                <div className={'relative  w-[327px] h-[174px]  md:w-[277px] md:h-[174px] mt-[20px] lg:w-[445px] lg:h-[280px]'}>
                     <Image
                         src={props.gallerySecond}
                         alt="Centered image"
@@ -106,7 +108,7 @@ export default function ProductCard(props) {
                 </div>
                 </div>
 
-                <div className={'relative w-[327px] mt-[20px] md:w-[395px] md:h-[368px] h-[368px]  md:mt-0 '}>
+                <div className={'relative w-[327px] mt-[20px] md:w-[395px] md:h-[368px] h-[368px]  md:mt-0 lg:w-[635px] lg:h-[592px] '}>
                     <Image
                         src={props.galleryThird}
                         alt="Centered image"

@@ -4,6 +4,7 @@ import data from "@/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
+import AllCategories from "@/app/ui/cards/Category/AllCategories";
 
 export default function Page({ params }) {
     const product = data.find((product) => product.slug === String(params.slug) && product.category === String(params.category));
@@ -56,11 +57,9 @@ export default function Page({ params }) {
             galleryThird={galleryThird}
         />
 
-            <div className="mx-auto">
-                {device === 'mobile' && <YAMLCard product={product} />}
-                {device === 'tablet' && <YAMLCard product={product} />}
-                {device === 'desktop' && <YAMLCard product={product} />}
-            </div>
+
+
+
 
         </>
 

@@ -8,10 +8,10 @@ import Link from "next/link";
 export default function YAMLProductCard(props) {
     return (
         <>
-            <div className={'grid grid-cols-1  w-full  mt-[40px]'}>
+            <div className={'grid grid-cols-1 md:w-[691px] md:h-[563px]  lg:w-[1100px] lg:h-[571px]  mt-[40px]'}>
                 <Link href={`/products/${props.product.category}/${props.product.slug}`}>
                 <div className={'w-[327px] h-[265px] md:w-[223px] md:h-[471px]'}>
-                    <div className={'w-[327px] h-[120px] md:w-[223px] md:h-[318px] items-center justify-center flex  bg-customGray rounded-lg'}>
+                    <div className={'w-[327px] h-[120px] md:w-[223px] md:h-[318px] items-center justify-center flex lg:w-[350px] lg:h-[318px]  bg-customGray rounded-lg'}>
                         <div className={'relative w-[73px] h-[95px] md:w-[133px] md:h-[191px] mx-auto '}>
                             <Image
                                 src={props.productImg}
