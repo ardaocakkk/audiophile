@@ -3,16 +3,30 @@ import AddIcon from '@mui/icons-material/Add';
 import { IconButton } from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export default function AddToCartButton() {
     const [quantity, setQuantity] = useState(1);
+    const [open, setOpen] = useState(false);
     function increment() {
         setQuantity(quantity + 1);
     }
+    const handleClick = () => {
+        setOpen(true);
+    };
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
     function decrement() {
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }
+
     }
     return (
         <>
@@ -23,7 +37,24 @@ export default function AddToCartButton() {
                     <IconButton onClick={increment} className={'px-2 text-black text-opacity-30'}><AddIcon/></IconButton>
 
                 </div>
-                <button className={'w-[160px] h-[48px] bg-darkOrange text-white md:ml-2 hover:bg-lightOrange transition duration-500 '}>ADD TO CART <AddShoppingCartIcon className={'ml-2'} /> </button>
+                <button onClick={handleClick} className={'w-[160px] h-[48px] bg-darkOrange text-white md:ml-2 hover:bg-lightOrange transition duration-500 '}>ADD TO CART <AddShoppingCartIcon className={'ml-2'} /> </button>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={2000}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                    onClose={handleClose}
+                >
+                    <Alert
+                        onClose={handleClose}
+                        severity="success"
+                        variant="filled"
+                        vertical={'top'}
+                        horizontal={'center'}
+                        sx={{ width: '100%' }}
+                    >
+                        <p className={'subTitle'}>Item added to cart successfully!</p>
+                    </Alert>
+                </Snackbar>
             </div>
         </>
     )
