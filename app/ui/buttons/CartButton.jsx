@@ -11,6 +11,7 @@ import {useEffect, useState} from "react";
 import useDeviceType from "@/app/ui/hooks/DeviceHook";
 import CartItem from "@/app/ui/cards/Cart/CartItem";
 import data from "@/data";
+import Link from "next/link";
 
 const sm = {
     position: 'absolute',
@@ -116,7 +117,7 @@ export default function CartButton() {
                         </div>
 
                         <div className={'w-[271px] h-[48px] md:w-[313px] md:h-[48px] bg-darkOrange flex justify-center items-center'}>
-                            <Button className={'text-white w-full h-full'}>CHECKOUT</Button>
+                           <Link onClick={handleClose} href={'/checkout'} className={'w-full h-full'}> <Button className={' text-white w-full h-full'}>CHECKOUT</Button> </Link>
                         </div>
 
                     </Box>

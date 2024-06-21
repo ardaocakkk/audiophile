@@ -149,8 +149,8 @@ export default function Checkout() {
                     </div>
                 </div>
             </div>
-            <div className={'w-[327px] border-2 border-customGray rounded-lg mt-[32px] pl-6 h-[612px] md:w-[689px] lg:pl-[48px] md:pl-[28px] md:h-[612px] lg:w-[350px] lg:h-[612px] mx-0 lg:ml-[30px]'}>
-                <div className={'w-[279px] h-[548px] mt-[32px] md:w-[689px] md:h-[612px] lg:w-[284px] lg:h-[548px] '}>
+            <div className={'w-[327px] border-2 border-customGray rounded-lg mt-[32px] pl-6 h-[612px] md:w-[689px] lg:pl-[48px] md:pl-[28px] md:h-[612px] lg:mt-0 lg:w-[350px] lg:h-[612px] mx-0 lg:ml-[30px]'}>
+                <div className={'w-[279px] h-[548px] mt-[32px] md:w-[689px] md:h-[612px]  lg:w-[284px] lg:h-[548px]  '}>
                     <div className={'h-[25px]'}><h3>SUMMARY</h3></div>
                     <div className={'w-[279px] mt-[31px] h-[492px] md:w-[623px] md:h-[492px] lg:w-[284px] lg:h-[492px]'}>
                         <CheckOutItem/>
