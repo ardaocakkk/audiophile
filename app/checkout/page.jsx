@@ -24,7 +24,7 @@ export default function Checkout() {
             zip: '',
             city: '',
             country: '',
-            paymentMethod: 'e-Money',
+            paymentMethod: '',
             eMoneyNumber: '',
             eMoneyPin: '',
         },
@@ -37,6 +37,25 @@ export default function Checkout() {
             ) {
                 errors.email = 'Invalid email address';
             }
+            if(!values.name) {
+                errors.name = 'Required';
+            }
+            if(!values.phone) {
+                errors.phone = 'Required';
+            }
+            if(!values.address) {
+                errors.address = 'Required';
+            }
+            if(!values.zip) {
+                errors.zip = 'Required';
+            }
+            if(!values.city) {
+                errors.city = 'Required';
+            }
+            if(!values.country) {
+                errors.country = 'Required';
+            }
+
             return errors;
         },
         onSubmit: (values,{setSubmitting}) => {
@@ -44,23 +63,27 @@ export default function Checkout() {
             console.log(values)
         }
 
+
     })
 
 
-    const [input, setInput] = useState('');
 
-    const handleInputChange = (e) => setInput(e.target.value);
 
     const [eMoneyChecked, setEMoneyChecked] = useState(true);
     const cartItems = useSelector((state) => state.cart.cartItems);
+    const [paymentMethod, setPaymentMethod] = useState('');
 
-    const isError = input === '';
+
 
     const handleEMoneyChange = (event) => {
         if(event.target.value === 'e-Money') {
             setEMoneyChecked(true)
+            setPaymentMethod('e-Money')
+            console.log(`Payment Method: ${paymentMethod} eMoneyChecked: ${eMoneyChecked}`);
         } else {
             setEMoneyChecked(false)
+            setPaymentMethod('cashondelivery')
+            console.log(`Payment Method: ${paymentMethod} eMoneyChecked: ${eMoneyChecked}`);
         }
     }
 
@@ -79,9 +102,8 @@ export default function Checkout() {
                         <div className={'w-[280px] h-[81px] md:w-[309px] md:h-[81px]'}>
                             <FormControl>
                                 <div className={'flex justify-between'}>
-                                <FormLabel> <h6 className={`text-black font-bold text-md ${isError ? "text-red-500" : ""} `}>Name</h6> </FormLabel>
-                                    {isError && <p className={'text-red-500'}>This field is required</p>}
-
+                                <FormLabel> <h6 className={`text-black font-bold text-md  `}>Name</h6> </FormLabel>
+                                    <p className={'text-red-500'}>{formik.errors.name}</p>
                                 </div>
                             <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                             <input
@@ -96,7 +118,10 @@ export default function Checkout() {
                             </FormControl>
                         </div>
                         <div className={'w-[280px] h-[81px] mt-6 md:mt-0 md:w-[309px] md:h-[81px]'}>
-                            <h6 className={'text-black font-bold text-md'}>Email Address</h6>
+                            <div className={'flex justify-between'}>
+                            <h6 className={`text-black font-bold text-md ${(formik.errors.email && formik.touched.email && formik.errors.email) ? "text-red-500" : ""}`}>Email Address</h6>
+                                <p className={'text-red-500 h-[16px]'}>{formik.errors.email && formik.touched.email && formik.errors.email}</p>
+                            </div>
                             <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                 <input
                                     id={'email'}
@@ -104,12 +129,17 @@ export default function Checkout() {
                                     type={'email'}
                                     onChange={formik.handleChange}
                                     value={formik.values.email}
+                                    onBlur={formik.handleBlur}
                                     className={'mx-auto w-full h-full pl-6  '}
                                     placeholder={'alexei@mail.com'} />
+
                             </div>
                         </div>
                         <div className={'w-[280px] h-[81px] mt-6 md:w-[309px] md:h-[81px]'}>
-                            <h6 className={'text-black font-bold text-md'}>Phone Number</h6>
+                            <div className={'flex justify-between'}>
+                                <FormLabel> <h6 className={`text-black font-bold text-md  `}>Phone Number</h6> </FormLabel>
+                                <p className={'text-red-500'}>{formik.errors.phone}</p>
+                            </div>
                             <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                 <input
                                     id={'phone'}
@@ -128,8 +158,12 @@ export default function Checkout() {
                         <h6 className={'text-darkOrange'}>SHIPPING INFO</h6>
                     </div>
                     <div className={'w-[280px] h-[380px] md:w-[634px] md:h-[291px] mt-4'}>
-                        <div className={'w-[280px] h-[81px]  md:h-[81px] '}>
+                        <div className={'w-[280px] h-[81px] md:w-full  md:h-[81px] '}>
+                            <div className={'w-full flex justify-between'}>
                             <h6 className={'text-black font-bold text-md'}>Your Address</h6>
+                                <p className={'text-red-500 h-[16px]'}>{formik.errors.address }</p>
+
+                            </div>
                             <div className={'w-[280px] h-[56px] md:w-[634px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                 <input
                                     id={'address'}
@@ -143,7 +177,10 @@ export default function Checkout() {
                         </div>
                         <div className={'w-[280px] h-[291px] md:w-[634px] md:h-[186px] grid grid-cols-1 md:grid-cols-2 '}>
                             <div className={'w-[280px] h-[81px] mt-6 md:w-[309px] md:h-[81px]'}>
+                                <div className={'flex justify-between'}>
                                 <h6 className={'text-black font-bold text-md'}>Zip Code</h6>
+                                <p className={'text-red-500 h-[16px]'}>{formik.errors.zip }</p>
+                                </div>
                                 <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                     <input
                                         id={'zip'}
@@ -156,7 +193,10 @@ export default function Checkout() {
                                 </div>
                             </div>
                             <div className={'w-[280px] h-[81px] mt-6 md:w-[309px] md:h-[81px]'}>
+                                <div className={'flex justify-between'}>
                                 <h6 className={'text-black font-bold text-md'}>City</h6>
+                                    <p className={'text-red-500 h-[16px]'}>{formik.errors.city }</p>
+                                </div>
                                 <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                     <input
                                         id={'city'}
@@ -169,7 +209,10 @@ export default function Checkout() {
                                 </div>
                             </div>
                             <div className={'w-[280px] h-[81px] mt-6 md:w-[309px] md:h-[81px]'}>
+                                <div className={'flex justify-between'}>
                                 <h6 className={'text-black font-bold text-md'}>Country</h6>
+                                    <p className={'text-red-500 h-[16px]'}>{formik.errors.country }</p>
+                                </div>
                                 <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] border-customGray border-2 rounded-lg'}>
                                     <input
                                         id={'country'}
@@ -199,7 +242,7 @@ export default function Checkout() {
                                         defaultValue="e-Money"
                                         name="radio-buttons-group"
                                     >
-                                        <div className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] rounded-lg border-2 border-customGray'}>
+                                        <div   className={'w-[280px] h-[56px] md:w-[309px] md:h-[56px] rounded-lg border-2 border-customGray'}>
                                             <div className={'pl-2'}>
                                                 <FormControlLabel
                                                     value="e-Money"
@@ -311,7 +354,7 @@ export default function Checkout() {
 
                             </div>
                             <div className={'w-[279px] h-[48px] md:w-[623px] md:h-[48px] lg:w-[284px] lg:h-[48px] bg-darkOrange flex justify-center items-center mx-auto'}>
-                                <button type={'submit'} className={'w-full h-full'}> <h6 className={'text-white'}>CONTINUE & PAY</h6></button>
+                                <button type={'submit'}  className={'w-full h-full'}> <h6 className={'text-white'}>CONTINUE & PAY</h6></button>
                             </div>
                         </div>
                     </div>

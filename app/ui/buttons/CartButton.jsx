@@ -95,7 +95,6 @@ export default function CartButton() {
     };
 
     const clear = () => {
-        console.log("clicked")
         dispatch(clearCart());
     }
 
