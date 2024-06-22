@@ -74,7 +74,6 @@ export default function CartButton() {
 
     const cart = data[6].cart
     const [boxSx, setBoxSx] = useState(sm);
-    console.log(cart);
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
