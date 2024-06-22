@@ -7,11 +7,13 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import {useState} from "react";
 import CheckOutItem from "@/app/ui/cards/Checkout/CheckoutItem";
+import {useSelector} from "react-redux";
 
 
 export default function Checkout() {
 
     const [eMoneyChecked, setEMoneyChecked] = useState(true);
+    const cartItems = useSelector((state) => state.cart.cartItems);
 
     const handleEMoneyChange = (event) => {
         if(event.target.value === 'e-Money') {
@@ -152,10 +154,11 @@ export default function Checkout() {
             <div className={'w-[327px] border-2 border-customGray rounded-lg mt-[32px] pl-6 h-[612px] md:w-[689px] lg:pl-[48px] md:pl-[28px] md:h-[612px] lg:mt-0 lg:w-[350px] lg:h-[612px] mx-0 lg:ml-[30px]'}>
                 <div className={'w-[279px] h-[548px] mt-[32px] md:w-[689px] md:h-[612px]  lg:w-[284px] lg:h-[548px]  '}>
                     <div className={'h-[25px]'}><h3>SUMMARY</h3></div>
-                    <div className={'w-[279px] mt-[31px] h-[492px] md:w-[623px] md:h-[492px] lg:w-[284px] lg:h-[492px]'}>
-                        <CheckOutItem/>
-                        <CheckOutItem/>
-                        <CheckOutItem/>
+                    <div className={'w-[279px] mt-[31px] h-[492px] md:w-[623px] md:h-[492px] lg:w-[284px] lg:h-[492px] overflow'}>
+                        {cartItems.map((item) => {
+                            return <CheckOutItem key={item.id} item={item}/>
+
+                        })}
                         <div className={'w-[279px] mt-[32px] h-[220px] md:w-[623px] md:h-[220px] lg:w-[284px] lg:h-[220px] '}>
                             <div className={'flex-row w-[279px] h-[140px] md:w-[623px] lg:w-[284px] '}>
                                 <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>

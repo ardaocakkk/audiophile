@@ -5,13 +5,14 @@ import YAMLCard from "@/app/ui/cards/Products/YAML/YAMLCard";
 import {useEffect, useState} from "react";
 import AddToCartButton from "@/app/ui/buttons/AddToCartButton";
 import useDeviceType from "@/app/ui/hooks/DeviceHook";
+import {useSelector} from "react-redux";
+import StoreProvider from "@/app/StoreProvider";
 
 export default function ProductCard(props) {
     const device = useDeviceType();
 
     return (
         <>
-
             <div className="w-[327px] h-[755px] md:w-[689px] md:h-[480px] lg:w-[1110px] lg:h-[560px]   mx-auto mt-[65px]">
                 <div className={'flex flex-col md:flex-row md:justify-between  '}>
                 <div className="w-[327px] md:w-[281px] h-[327px] md:h-[480px] lg:w-[540px] lg:h-[560px] lg:mr-[125px]   bg-customGray rounded-lg flex justify-center items-center  ">
@@ -36,7 +37,7 @@ export default function ProductCard(props) {
                     <div className={'mt-6'}>
                         <h5>$ {props.product.price}</h5>
                     </div>
-                    <AddToCartButton/>
+                    <AddToCartButton theProduct={props.product} />
                 </div>
                 </div>
 

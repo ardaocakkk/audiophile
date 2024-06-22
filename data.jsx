@@ -540,21 +540,21 @@ var data = [
   {
     "cart" : [
       {
-        "id": 1,
+        "id": 3,
         "name": "XX99 MK II",
         "price": 2999,
         "quantity": 1,
         "image": "/cart/cart-1.png",
       },
       {
-        "id": 2,
+        "id": 1,
         "name": "XX 59",
         "price": 899,
         "quantity": 2,
         "image": "/cart/cart-2.png",
       },
       {
-        "id": 3,
+        "id": 4,
         "name": "YX1 Wireless Earphones",
         "price": 599,
         "quantity": 1,

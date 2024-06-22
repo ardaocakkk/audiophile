@@ -12,6 +12,8 @@ import useDeviceType from "@/app/ui/hooks/DeviceHook";
 import CartItem from "@/app/ui/cards/Cart/CartItem";
 import data from "@/data";
 import Link from "next/link";
+import {useDispatch, useSelector} from "react-redux";
+import {clearCart} from "@/lib/features/CartSlice";
 
 const sm = {
     position: 'absolute',
@@ -66,6 +68,8 @@ const lg = {
 
 export default function CartButton() {
 
+    const cartItems = useSelector((state) => state.cart.cartItems);
+
     const device = useDeviceType();
 
     const cart = data[6].cart
@@ -75,6 +79,8 @@ export default function CartButton() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const dispatch = useDispatch();
 
     const getBoxSx = () => {
         switch (device) {
@@ -89,6 +95,11 @@ export default function CartButton() {
         }
     };
 
+    const clear = () => {
+        console.log("clicked")
+        dispatch(clearCart());
+    }
+
 
     return (
         <>
@@ -102,13 +113,15 @@ export default function CartButton() {
                 >
                     <Box sx={getBoxSx()}>
                         <div className={'flex w-[270px] h-[26px] justify-between '}>
-                            <h5>CART ({cart.length}) </h5>
-                            <p className={'text-black text-opacity-30 '}>Remove All</p>
+                            <h5>CART ({cartItems.length}) </h5>
+                            <button onClick={() => clear()} className={'text-black text-opacity-30 '}>Remove All</button>
                         </div>
+                        <div className={'w-[384px] h-[240px] overflow-auto '}>
                         <div className={'flex flex-col mt-[31px] md:w-[313px] md:h-[240px] md:ml-[33px] '}>
-                            {cart.map((item) => {
+                            {cartItems.map((item) => {
                                 return <CartItem key={item.id} item={item}/>
                             })}
+                        </div>
                         </div>
 
                         <div className={'w-[270px] h-[25px] md:w-[308px] md:h-[25px] flex justify-between mt-[39px]'}>
