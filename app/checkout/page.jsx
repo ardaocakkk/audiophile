@@ -11,9 +11,12 @@ import {useSelector} from "react-redux";
 import Image from "next/image";
 import CashOnDeliveryIcon from "@/app/ui/icons/CashOnDeliveryIcon";
 import {useFormik} from "formik";
+import OrderConfirmationAlert from "@/app/ui/Alerts/OrderConfirmationAlert";
 
 
 export default function Checkout() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const formik = useFormik({
         initialValues: {
@@ -59,13 +62,17 @@ export default function Checkout() {
             return errors;
         },
         onSubmit: (values,{setSubmitting}) => {
-            alert(values)
             console.log(values)
+            setSubmitting(false);
+            setIsModalOpen(true);
         }
 
 
     })
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
 
 
 
@@ -369,13 +376,14 @@ export default function Checkout() {
 
                             </div>
                             <div className={'w-[279px] h-[48px] md:w-[623px] md:h-[48px] lg:w-[284px] lg:h-[48px] bg-darkOrange flex justify-center items-center mx-auto'}>
-                                <button type={'submit'}  className={'w-full h-full'}> <h6 className={'text-white'}>CONTINUE & PAY</h6></button>
+                                <button  type={'submit'}  className={'w-full h-full'}> <h6 className={'text-white'}>CONTINUE & PAY</h6></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <OrderConfirmationAlert isOpen={isModalOpen} onClose={closeModal} grandTotal={grandTotal} />
         </form>
     )
 }
