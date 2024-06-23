@@ -25,8 +25,6 @@ export default function YAMLCard(props) {
                 <div className={'grid  grid-cols-1 md:grid-cols-3 '}>
                 {props.product?.others?.map((product) => {
                     const image = getImage(product);
-                    console.log(image);
-                    console.log(product);
                     return (
                         <>
                             <YAMLProductCard product={product} productImg={image}  />

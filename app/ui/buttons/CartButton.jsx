@@ -13,7 +13,7 @@ import CartItem from "@/app/ui/cards/Cart/CartItem";
 import data from "@/data";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
-import {clearCart} from "@/lib/features/CartSlice";
+import {clearCart, increment} from "@/lib/features/CartSlice";
 
 const sm = {
     position: 'absolute',
@@ -69,17 +69,24 @@ const lg = {
 export default function CartButton() {
 
     const cartItems = useSelector((state) => state.cart.cartItems);
-
     const device = useDeviceType();
 
-    const cart = data[6].cart
-    const [boxSx, setBoxSx] = useState(sm);
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     const dispatch = useDispatch();
+
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        let total = 0;
+        cartItems.forEach((item) => {
+            total += item.price * item.quantity;
+        });
+        setTotal(total);
+    }, [cartItems]);
 
     const getBoxSx = () => {
         switch (device) {
@@ -97,6 +104,8 @@ export default function CartButton() {
     const clear = () => {
         dispatch(clearCart());
     }
+
+
 
 
     return (
@@ -117,14 +126,14 @@ export default function CartButton() {
                         <div className={'w-[384px] h-[240px] overflow-auto '}>
                         <div className={'flex flex-col mt-[31px] md:w-[313px] md:h-[240px] md:ml-[33px] '}>
                             {cartItems.map((item) => {
-                                return <CartItem key={item.id} item={item}/>
+                                return <CartItem key={item.id} item={item} />
                             })}
                         </div>
                         </div>
 
                         <div className={'w-[270px] h-[25px] md:w-[308px] md:h-[25px] flex justify-between mt-[39px]'}>
-                            <p>TOTAL</p>
-                            <p>$ 1,999.00</p>
+                            <p className={'text-black text-opacity-30'}>TOTAL</p>
+                            <p className={'font-bold'}>{total} $</p>
                         </div>
 
                         <div className={'w-[271px] h-[48px] md:w-[313px] md:h-[48px] bg-darkOrange flex justify-center items-center'}>

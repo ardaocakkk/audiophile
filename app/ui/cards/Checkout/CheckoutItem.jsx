@@ -19,7 +19,7 @@ export default function CheckOutItem(props) {
                     </div>
                 </div>
                 <div>
-                    <p className={'subTitle text-black text-opacity-30'}>x1</p>
+                    <p className={'subTitle text-black text-opacity-30'}>x{props.item.quantity}</p>
                 </div>
             </div>
         </>

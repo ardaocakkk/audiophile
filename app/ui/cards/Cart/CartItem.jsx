@@ -1,19 +1,28 @@
 import {IconButton} from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
+
+import {useDispatch, useSelector} from "react-redux";
+import {incrementItemQuantity, decrementItemQuantity} from "@/lib/features/CartSlice";
 
 export default function CartItem(props) {
     const [quantity, setQuantity] = useState(1);
-    function increment() {
+    const dispatch = useDispatch();
+    const increment = (product) => {
+
         setQuantity(quantity + 1);
+        dispatch(incrementItemQuantity(product));
     }
-    function decrement() {
-        if (quantity > 1) {
+    const decrement = (product) => {
             setQuantity(quantity - 1);
-        }
+            dispatch(decrementItemQuantity(product));
     }
+
+
+
+
     return (
         <>
 
@@ -32,12 +41,12 @@ export default function CartItem(props) {
                 </div>
                 <div className={'w-[160px] h-[64px]  flex flex-col justify-between ml-4'}>
                     <p className={'text-black font-bold text-opacity-60'}>{props.item.name}</p>
-                    <p className={'text-black subTitle text-opacity-30'}>{quantity} x {props.item.price}</p>
+                    <p className={'text-black subTitle text-opacity-30'}>{props.item.quantity} x {props.item.price}</p>
                 </div>
                 <div className={'w-[120px] h-[48px] bg-customGray flex justify-between  items-center'}>
-                    <IconButton onClick={decrement} className={'px-2 text-black text-opacity-30'}> <RemoveIcon/> </IconButton>
-                    <p>{quantity}</p>
-                    <IconButton onClick={increment} className={'px-2 text-black text-opacity-30'}><AddIcon/></IconButton>
+                    <IconButton onClick={() => {decrement(props.item)}} className={'px-2 text-black text-opacity-30'}> <RemoveIcon/> </IconButton>
+                    <p>{props.item.quantity}</p>
+                    <IconButton onClick={() => increment(props.item)} className={'px-2 text-black text-opacity-30'}><AddIcon/></IconButton>
 
                 </div>
             </div>

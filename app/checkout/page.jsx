@@ -5,7 +5,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import CheckOutItem from "@/app/ui/cards/Checkout/CheckoutItem";
 import {useSelector} from "react-redux";
 import Image from "next/image";
@@ -72,8 +72,23 @@ export default function Checkout() {
     const [eMoneyChecked, setEMoneyChecked] = useState(true);
     const cartItems = useSelector((state) => state.cart.cartItems);
     const [paymentMethod, setPaymentMethod] = useState('');
+    const [total, setTotal] = useState(0);
+    const [vat, setVat] = useState(0);
+    const [grandTotal, setGrandTotal] = useState(0);
 
+    useEffect(() => {
+        let total = 0;
+        cartItems.forEach((item) => {
+            total += item.price * item.quantity;
+        });
+        setTotal(total);
+        setVat(parseFloat((total * 0.2).toFixed(2)));
 
+    }, [cartItems]);
+
+    useEffect(() => {
+        setGrandTotal(total + vat + 50);
+    },[total])
 
     const handleEMoneyChange = (event) => {
         if(event.target.value === 'e-Money') {
@@ -321,7 +336,7 @@ export default function Checkout() {
             <div className={'w-[327px] border-2 border-customGray rounded-lg mt-[32px] pl-6 h-[612px] md:w-[689px] lg:pl-[48px] md:pl-[28px] md:h-[612px] lg:mt-0 lg:w-[350px] lg:h-[612px] mx-0 lg:ml-[30px]'}>
                 <div className={'w-[279px] h-[548px] mt-[32px] md:w-[689px] md:h-[612px]  lg:w-[284px] lg:h-[548px]  '}>
                     <div className={'h-[25px]'}><h3>SUMMARY</h3></div>
-                    <div className={'w-[279px] mt-[31px] h-[492px] md:w-[623px] md:h-[492px] lg:w-[284px] lg:h-[492px] overflow'}>
+                    <div className={'w-[279px] mt-[31px] h-[492px] md:w-[623px]  md:h-[492px] lg:w-[284px] lg:h-[492px] overflow'}>
                         {cartItems.map((item) => {
                             return <CheckOutItem key={item.id} item={item}/>
 
@@ -330,7 +345,7 @@ export default function Checkout() {
                             <div className={'flex-row w-[279px] h-[140px] md:w-[623px] lg:w-[284px] '}>
                                 <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                     <div className={'w-[46px] h-[25px]'}> <p className={'text-black text-opacity-30'}>TOTAL</p> </div>
-                                    <div> <p className={'font-bold'}> $ 5,396 </p></div>
+                                    <div> <p className={'font-bold'}> $ {total} </p></div>
                                 </div>
                                 <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                     <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
@@ -341,14 +356,14 @@ export default function Checkout() {
                                 <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                     <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                         <div className={'w-[114px] h-[25px]'}> <p className={'text-black text-opacity-30'}>VAT (INCLUDED)</p> </div>
-                                        <div> <p className={'font-bold'}> $ 1,079</p></div>
+                                        <div> <p className={'font-bold'}> $ {vat}</p></div>
                                     </div>
                                 </div>
 
                                 <div className={'w-[279px] mt-7 h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                     <div className={'w-[279px] h-[25px] md:w-[623px] md:h-[25px] lg:w-[284px] lg:h-[25px] flex justify-between'}>
                                         <div className={'w-[114px] h-[25px]'}> <p className={'text-black text-opacity-30'}>GRAND TOTAL</p> </div>
-                                        <div > <p className={'font-bold text-darkOrange'}> $ 5,446 </p></div>
+                                        <div > <p className={'font-bold text-darkOrange'}> $ {grandTotal} </p></div>
                                     </div>
                                 </div>
 
