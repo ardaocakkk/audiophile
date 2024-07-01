@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image';
 import cart from '@/public/shared/desktop/icon-cart.svg';
 import logo from '@/public/shared/desktop/logo.svg';
@@ -7,8 +8,12 @@ import HamburgerIconButton from "@/app/ui/buttons/HamburgerIconButton";
 import CartIcon from "@/app/ui/icons/CartIcon";
 import AudiophileIcon from "@/app/ui/icons/AuidophileIcon";
 import CartButton from "@/app/ui/buttons/CartButton";
+import AuthenticationHook from "@/app/ui/hooks/AuthenticationHook";
 
 export default function Header() {
+
+    const isAuthenticated = AuthenticationHook();
+
     return <>
          <header>
             <div className={'flex w-full h-[90px] bg-black items-center justify-between text-white px-[24px] md:hidden'}>
@@ -37,6 +42,7 @@ export default function Header() {
                      <Link href={'/category/earphones'}><p className={'hover:text-darkOrange'}>EARPHONES</p></Link>
                  </div>
                  <div>
+                     {isAuthenticated ? <Link href={'/account'}> <p className={'hover:text-darkOrange'}>ACCOUNT</p></Link> : <Link href={'/login'}> <p className={'hover:text-darkOrange'}>LOGIN</p></Link>}
                      <CartButton/>
                  </div>
              </div>

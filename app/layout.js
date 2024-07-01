@@ -1,4 +1,3 @@
-
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
@@ -16,6 +15,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <StoreProvider>
     <html lang="en">

@@ -10,7 +10,7 @@ var data = [
     },
     "category": "earphones",
     "categoryImage": {
-      "mobile": "./public/product-yx1-earphones/mobile/image-category-page-preview.jpg",
+        "mobile": "/public/product-yx1-earphones/mobile/image-category-page-preview.jpg",
       "tablet": "/public/product-yx1-earphones/tablet/image-category-page-preview.jpg",
       "desktop": "/public/product-yx1-earphones/yaml/image-category-page-preview.jpg"
     },

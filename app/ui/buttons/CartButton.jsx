@@ -137,7 +137,7 @@ export default function CartButton() {
                         </div>
 
                         <div className={'w-[271px] h-[48px] md:w-[313px] md:h-[48px] bg-darkOrange flex justify-center items-center'}>
-                           <Link onClick={handleClose} href={'/checkout'} className={'w-full h-full'}> <Button className={' text-white w-full h-full'}>CHECKOUT</Button> </Link>
+                           <Link onClick={handleClose} href={'/checkout'} className={'w-full h-full'}> <button className={' text-white w-full h-full'}>CHECKOUT</button> </Link>
                         </div>
 
                     </Box>

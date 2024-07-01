@@ -31,6 +31,8 @@ import BestGearDesktop from "@/public/shared/desktop/image-best-gear.jpg";
 import Footer from "@/app/ui/Layout/Footer/Footer";
 import AllCategories from "@/app/ui/cards/Category/AllCategories";
 import Link from "next/link";
+import {useDispatch} from "react-redux";
+import {getCurrentUser} from "@/lib/features/auth/AuthAction";
 
 export default function Home() {
     const [deviceSize, setDeviceSize] = useState('');
@@ -83,6 +85,12 @@ export default function Home() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getCurrentUser())
+    },[dispatch])
   return (
    <div>
        <main>

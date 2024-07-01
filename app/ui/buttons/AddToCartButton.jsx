@@ -42,7 +42,7 @@ export default function AddToCartButton(props) {
                     <IconButton onClick={() => incrementItemQuantity(props.theProduct)} className={'px-2 text-black text-opacity-30'}><AddIcon/></IconButton>
 
                 </div>
-                <button onClick={() => handleClick(props.theProduct)} className={'w-[160px] h-[48px] bg-darkOrange text-white md:ml-2 hover:bg-lightOrange transition duration-500 '}>ADD TO CART <AddShoppingCartIcon className={'ml-2'} /> </button>
+                <button onClick={() => handleClick(props.theProduct)} className={'w-[160px] h-[48px] bg-darkOrange text-white md:ml-2 hover:bg-lightOrange text-w transition duration-500 '}>ADD TO CART <AddShoppingCartIcon className={'ml-2'} /> </button>
                 <Snackbar
                     open={open}
                     autoHideDuration={2000}
